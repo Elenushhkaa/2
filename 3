@@ -1,0 +1,35 @@
+#include <iostream>
+#include <random>
+
+using namespace std;
+
+int deliteli(int n)
+{
+    int delli = 0;
+
+    for (int i = 1; i < n; i++)
+        if (n % i == 0)
+            delli += i;
+    return (delli);
+}
+
+int main(void)
+{
+    setlocale(LC_ALL, "Russian");
+    int Elenushka = 0;
+    int b = 0;
+
+    for (int x = 2; x < 7000; x += 2)
+    {
+        Elenushka = deliteli(x);
+        for (int y = x + 2; y < 7000; y += 2) {
+            b = deliteli(y);
+            if (Elenushka == y && b == x) {
+                cout << x << " " << y << endl;
+                break;
+            }
+            
+        }
+       
+    }
+}
